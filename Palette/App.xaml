@@ -4,6 +4,10 @@
              x:Class="Palette.App">
     <Application.Resources>
         <ResourceDictionary>
+            <!-- BackgroundColor of the container -->
+            <Color x:Key="Container">white</Color>
+            
+            <!-- Default colors of the app -->
             <Color x:Key="Primary">#AB3527</Color>
             <Color x:Key="Secundary">#775752</Color>
             <Color x:Key="Tertiary">#705C2E</Color>
