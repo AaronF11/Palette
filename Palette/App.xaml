@@ -24,6 +24,10 @@
             <Color x:Key="Primary-blue">#007AFF</Color>
             <Color x:Key="Secundary-blue">#E0E0E0</Color>
             <Color x:Key="Tertiary-blue">#007AFF</Color>
+            <!-- Transparency Theme Colors -->
+            <Color x:Key="Primary-transparency">#666666</Color>
+            <Color x:Key="Secondary-transparency">#DDDDDD</Color>
+            <Color x:Key="Tertiary-transparency">#333333</Color>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
