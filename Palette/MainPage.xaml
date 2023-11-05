@@ -27,6 +27,24 @@
                                MaxLength="3" />
                     </Frame>
                 </StackLayout>
+                <StackLayout Orientation="Horizontal"
+                             HorizontalOptions="Center">
+                    <Slider x:Name="SldGreen"
+                            WidthRequest="220"
+                            Minimum="0"
+                            Maximum="256"
+                            ThumbColor="{StaticResource Primary-green}"
+                            MaximumTrackColor="{StaticResource Secondary-green}"
+                            MinimumTrackColor="{StaticResource Tertiary-green}" />
+                    <Frame CornerRadius="100"
+                           HasShadow="True">
+                        <Entry x:Name="TxtGreen"
+                               WidthRequest="50"
+                               Keyboard="Numeric"
+                               HorizontalTextAlignment="Center"
+                               MaxLength="3" />
+                    </Frame>
+                </StackLayout>
             </StackLayout>
         </Frame>
     </Grid>
