@@ -6,7 +6,11 @@
     <Grid x:Name="Container" BackgroundColor="{StaticResource Container}">
         <Frame Margin="50,0,50,0" VerticalOptions="Center" CornerRadius="15" HasShadow="True">
             <StackLayout Spacing="15" VerticalOptions="Center">
-                
+                <Label FontAttributes="Bold"
+                       FontSize="Large"
+                       HorizontalTextAlignment="Center"
+                       Text="Palette"
+                       TextColor="{StaticResource Title}"/>
             </StackLayout>
         </Frame>
     </Grid>

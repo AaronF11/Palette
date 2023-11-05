@@ -7,6 +7,9 @@
             <!-- BackgroundColor of the container -->
             <Color x:Key="Container">white</Color>
             
+            <!-- Label: Title -->
+            <Color x:Key="Title">black</Color>
+            
             <!-- Default colors of the app -->
             <Color x:Key="Primary">#AB3527</Color>
             <Color x:Key="Secundary">#775752</Color>
