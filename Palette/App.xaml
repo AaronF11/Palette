@@ -10,10 +10,20 @@
             <!-- Label: Title -->
             <Color x:Key="Title">black</Color>
             
-            <!-- Default colors of the app -->
-            <Color x:Key="Primary">#AB3527</Color>
-            <Color x:Key="Secundary">#775752</Color>
-            <Color x:Key="Tertiary">#705C2E</Color>
+            <!-- Slider: Colors of the component -->
+                
+            <!-- Red Theme Colors -->
+            <Color x:Key="Primary-red">#FF4136</Color>
+            <Color x:Key="Secondary-red">#FFC1C1</Color>
+            <Color x:Key="Tertiary-red">#85144B</Color>
+            <!-- Green Theme Colors -->
+            <Color x:Key="Primary-green">#2ECC40</Color>
+            <Color x:Key="Secondary-green">#E0E0E0</Color>
+            <Color x:Key="Tertiary-green">#3D9970</Color>
+            <!-- Blue Theme Colors -->
+            <Color x:Key="Primary-blue">#007AFF</Color>
+            <Color x:Key="Secundary-blue">#E0E0E0</Color>
+            <Color x:Key="Tertiary-blue">#007AFF</Color>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
