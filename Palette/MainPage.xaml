@@ -11,21 +11,24 @@
     
     <Grid x:Name="Container" BackgroundColor="{StaticResource Container}">
         <Frame Margin="50,0,50,0" VerticalOptions="Center" CornerRadius="15" HasShadow="True">
-            <StackLayout Spacing="15" VerticalOptions="Center">
+            <StackLayout Spacing="15"
+                         VerticalOptions="Center">
                 <Label FontAttributes="Bold"
                        FontSize="40"
                        HorizontalTextAlignment="Center"
                        Text="Palette"
                        TextColor="{StaticResource Title}" />
-                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                    <Slider x:Name="SldRed" 
+                <StackLayout Orientation="Horizontal"
+                             HorizontalOptions="Center">
+                    <Slider x:Name="SldRed"
                             WidthRequest="220"
                             Minimum="0"
                             Maximum="256"
                             ThumbColor="{StaticResource Primary-red}"
                             MaximumTrackColor="{StaticResource Secondary-red}"
                             MinimumTrackColor="{StaticResource Tertiary-red}" />
-                    <Frame CornerRadius="100" HasShadow="True">
+                    <Frame CornerRadius="100"
+                           HasShadow="True">
                         <Entry x:Name="TxtRed"
                                WidthRequest="50"
                                Keyboard="Numeric"
@@ -87,7 +90,8 @@
                                MaxLength="3" />
                     </Frame>
                 </StackLayout>
-                <Frame CornerRadius="25" HorizontalOptions="Center">
+                <Frame CornerRadius="25"
+                       HorizontalOptions="Center">
                     <StackLayout Orientation="Horizontal">
                         <Label x:Name="LblHex"
                                HorizontalTextAlignment="End"
@@ -99,9 +103,15 @@
                                      WidthRequest="25"
                                      Source="CP.png"
                                      VerticalOptions="Center"
-                                     BackgroundColor="Transparent"
-                                     />
+                                     BackgroundColor="{StaticResource Container}" />
                     </StackLayout>
+                </Frame>
+                <Frame Padding="0"
+                       CornerRadius="15">
+                    <Button x:Name="BtnRandom"
+                            Text="Generate random color"
+                            TextTransform="None" 
+                            BackgroundColor="{StaticResource Container}"/>
                 </Frame>
             </StackLayout>
         </Frame>
