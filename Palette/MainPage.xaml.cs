@@ -6,15 +6,17 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
+using Plugin.Toasts;
 
 namespace Palette
 {
 	public partial class MainPage : ContentPage
 	{
 		//Global attributes
-		private Color color = new Color();
-		private Random random = new Random();
+		private Color Color = new Color();
+		private Random Random = new Random();
 		private bool IsRandom = false;
+		private string HexValue { set; get; }
 
 		public MainPage()
 		{
@@ -30,50 +32,65 @@ namespace Palette
 
 		private void Slider_ValueChanged(object sender, ValueChangedEventArgs e)
 		{
-            if (!IsRandom)
-            {
+			if (!IsRandom)
+			{
 				var Red = SldRed.Value;
 				var Green = SldGreen.Value;
 				var Blue = SldBlue.Value;
 				var Alpha = SldTransparency.Value;
 
-				color = Color.FromRgba(Red, Green, Blue, Alpha);
+				Color = Color.FromRgba(Red, Green, Blue, Alpha);
 
-				SetColor(color);
+				SetColor(Color);
 			}
-        }
+		}
 
-		private void SetColor(Color color)
+		private void SetColor(Color Color)
 		{
-			TxtRed.Text = color.R.ToString();
-			TxtGreen.Text = color.G.ToString();
-			TxtBlue.Text = color.B.ToString();
-			TxtTransparency.Text = color.A.ToString();
+			TxtRed.Text = Color.R.ToString();
+			TxtGreen.Text = Color.G.ToString();
+			TxtBlue.Text = Color.B.ToString();
+			TxtTransparency.Text = Color.A.ToString();
 
-			Container.BackgroundColor = color;
-			LblTitle.TextColor = color;
-			LblHex.TextColor = color;
-			LblHex.Text = "Hex value: " + color.ToHex();
+			Container.BackgroundColor = Color;
+			LblTitle.TextColor = Color;
+			LblHex.TextColor = Color;
+			LblHex.Text = "Hex value: " + Color.ToHex();
+			HexValue = Color.ToHex();
 		}
 
 		private void Random_Clicked(object sender, EventArgs e)
 		{
 			IsRandom = true;
 
-            color = Color.FromRgba(
-				random.Next(0, 256),
-				random.Next(0, 256),
-				random.Next(0, 256),
-				random.Next(0,255));
+			Color = Color.FromRgba(
+				Random.Next(0, 256),
+				Random.Next(0, 256),
+				Random.Next(0, 256),
+				Random.Next(0, 255));
 
-			SetColor(color);
+			SetColor(Color);
 
-			SldRed.Value = color.R;
-			SldGreen.Value = color.G;
-			SldBlue.Value = color.B;
-			SldTransparency.Value = color.A;
+			SldRed.Value = Color.R;
+			SldGreen.Value = Color.G;
+			SldBlue.Value = Color.B;
+			SldTransparency.Value = Color.A;
 
 			IsRandom = false;
 		}
+
+		private async void Copy_Clicked(object sender, EventArgs e)
+		{
+			await Clipboard.SetTextAsync(HexValue);
+			var notificator = DependencyService.Get<IToastNotificator>();
+			var options = new NotificationOptions()
+			{
+				Title = "Hex Value Copied",
+				Description = "The hex value " + HexValue + " has been copied to clipboard."
+			};
+
+			var result = await notificator.Notify(options);
+		}
+
 	}
 }

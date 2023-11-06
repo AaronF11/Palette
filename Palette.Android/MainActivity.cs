@@ -5,6 +5,8 @@ using Android.Content.PM;
 using Android.Runtime;
 using Android.OS;
 using FFImageLoading.Svg.Forms;
+using Plugin.Toasts;
+using Xamarin.Forms;
 
 namespace Palette.Droid
 {
@@ -21,7 +23,11 @@ namespace Palette.Droid
 
 			Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            LoadApplication(new App());
+			// Initialize Toast
+			DependencyService.Register<ToastNotification>();
+			// If you are using Android you must pass through the activity
+			ToastNotification.Init(this);
+			LoadApplication(new App());
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
