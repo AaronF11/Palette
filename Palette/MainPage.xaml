@@ -22,11 +22,10 @@
                              HorizontalOptions="Center">
                     <Slider x:Name="SldRed"
                             WidthRequest="220"
-                            Minimum="0"
-                            Maximum="256"
                             ThumbColor="{StaticResource Primary-red}"
                             MaximumTrackColor="{StaticResource Secondary-red}"
-                            MinimumTrackColor="{StaticResource Tertiary-red}" />
+                            MinimumTrackColor="{StaticResource Tertiary-red}" 
+                            ValueChanged="Slider_ValueChanged" />
                     <Frame CornerRadius="100"
                            HasShadow="True">
                         <Entry x:Name="TxtRed"
@@ -40,11 +39,10 @@
                              HorizontalOptions="Center">
                     <Slider x:Name="SldGreen"
                             WidthRequest="220"
-                            Minimum="0"
-                            Maximum="256"
                             ThumbColor="{StaticResource Primary-green}"
                             MaximumTrackColor="{StaticResource Secondary-green}"
-                            MinimumTrackColor="{StaticResource Tertiary-green}" />
+                            MinimumTrackColor="{StaticResource Tertiary-green}"
+                            ValueChanged="Slider_ValueChanged" />
                     <Frame CornerRadius="100"
                            HasShadow="True">
                         <Entry x:Name="TxtGreen"
@@ -58,11 +56,10 @@
                              HorizontalOptions="Center">
                     <Slider x:Name="SldBlue"
                             WidthRequest="220"
-                            Minimum="0"
-                            Maximum="256"
                             ThumbColor="{StaticResource Primary-blue}"
                             MaximumTrackColor="{StaticResource Secundary-blue}"
-                            MinimumTrackColor="{StaticResource Tertiary-blue}" />
+                            MinimumTrackColor="{StaticResource Tertiary-blue}"
+                            ValueChanged="Slider_ValueChanged" />
                     <Frame CornerRadius="100"
                            HasShadow="True">
                         <Entry x:Name="TxtBlue"
@@ -76,11 +73,10 @@
                              HorizontalOptions="Center">
                     <Slider x:Name="SldTransparency"
                             WidthRequest="220"
-                            Minimum="0"
-                            Maximum="255"
                             ThumbColor="{StaticResource Primary-transparency}"
                             MaximumTrackColor="{StaticResource Secondary-transparency}"
-                            MinimumTrackColor="{StaticResource Tertiary-transparency}" />
+                            MinimumTrackColor="{StaticResource Tertiary-transparency}"
+                            ValueChanged="Slider_ValueChanged" />
                     <Frame CornerRadius="100"
                            HasShadow="True">
                         <Entry x:Name="TxtTransparency"
@@ -90,7 +86,8 @@
                                MaxLength="3" />
                     </Frame>
                 </StackLayout>
-                <Frame CornerRadius="25"
+                <Frame x:Name="HexValue"
+                       CornerRadius="25"
                        HorizontalOptions="Center">
                     <StackLayout Orientation="Horizontal">
                         <Label x:Name="LblHex"
@@ -111,7 +108,7 @@
                     <Button x:Name="BtnRandom"
                             Text="Generate random color"
                             TextTransform="None" 
-                            BackgroundColor="{StaticResource Container}"/>
+                            BackgroundColor="{StaticResource Container}" />
                 </Frame>
             </StackLayout>
         </Frame>
