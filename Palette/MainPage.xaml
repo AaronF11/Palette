@@ -13,7 +13,8 @@
         <Frame Margin="50,0,50,0" VerticalOptions="Center" CornerRadius="15" HasShadow="True">
             <StackLayout Spacing="15"
                          VerticalOptions="Center">
-                <Label FontAttributes="Bold"
+                <Label x:Name="LblTitle"
+                       FontAttributes="Bold"
                        FontSize="40"
                        HorizontalTextAlignment="Center"
                        Text="Palette"
@@ -29,10 +30,10 @@
                     <Frame CornerRadius="100"
                            HasShadow="True">
                         <Entry x:Name="TxtRed"
-                               WidthRequest="50"
+                               WidthRequest="70"
                                Keyboard="Numeric"
                                HorizontalTextAlignment="Center"
-                               MaxLength="3" />
+                               MaxLength="5" />
                     </Frame>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal"
@@ -46,10 +47,10 @@
                     <Frame CornerRadius="100"
                            HasShadow="True">
                         <Entry x:Name="TxtGreen"
-                               WidthRequest="50"
+                               WidthRequest="70"
                                Keyboard="Numeric"
                                HorizontalTextAlignment="Center"
-                               MaxLength="3" />
+                               MaxLength="5" />
                     </Frame>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal"
@@ -63,10 +64,10 @@
                     <Frame CornerRadius="100"
                            HasShadow="True">
                         <Entry x:Name="TxtBlue"
-                               WidthRequest="50"
+                               WidthRequest="70"
                                Keyboard="Numeric"
                                HorizontalTextAlignment="Center"
-                               MaxLength="3" />
+                               MaxLength="5" />
                     </Frame>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal"
@@ -80,10 +81,10 @@
                     <Frame CornerRadius="100"
                            HasShadow="True">
                         <Entry x:Name="TxtTransparency"
-                               WidthRequest="50"
+                               WidthRequest="70"
                                Keyboard="Numeric"
                                HorizontalTextAlignment="Center"
-                               MaxLength="3" />
+                               MaxLength="5" />
                     </Frame>
                 </StackLayout>
                 <Frame x:Name="HexValue"
@@ -108,7 +109,8 @@
                     <Button x:Name="BtnRandom"
                             Text="Generate random color"
                             TextTransform="None" 
-                            BackgroundColor="{StaticResource Container}" />
+                            BackgroundColor="{StaticResource Container}" 
+                            Clicked="Random_Clicked"/>
                 </Frame>
             </StackLayout>
         </Frame>
