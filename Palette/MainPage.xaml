@@ -1,7 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ffsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
              x:Class="Palette.MainPage">
+    <ContentPage.Resources>
+        <!-- Image: Copy.svg -->
+        <ffsvg:SvgCachedImage x:Key="Copy"
+                              Source="resource://Palette.Copy.svg" />
+    </ContentPage.Resources>
     
     <Grid x:Name="Container" BackgroundColor="{StaticResource Container}">
         <Frame Margin="50,0,50,0" VerticalOptions="Center" CornerRadius="15" HasShadow="True">
@@ -81,6 +87,22 @@
                                MaxLength="3" />
                     </Frame>
                 </StackLayout>
+                <Frame CornerRadius="25" HorizontalOptions="Center">
+                    <StackLayout Orientation="Horizontal">
+                        <Label x:Name="LblHex"
+                               HorizontalTextAlignment="End"
+                               Text="Hex value: #00000"
+                               VerticalOptions="Center" />
+                        <ImageButton x:Name="BtnCopy"
+                                     Margin="10,0,10,0"
+                                     HeightRequest="25"
+                                     WidthRequest="25"
+                                     Source="CP.png"
+                                     VerticalOptions="Center"
+                                     BackgroundColor="Transparent"
+                                     />
+                    </StackLayout>
+                </Frame>
             </StackLayout>
         </Frame>
     </Grid>
